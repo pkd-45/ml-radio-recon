@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# Raw data is large and regenerable from scripts/download_data.py
+data/*.h5
+data/*.npy
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+.ipynb_checkpoints/
+
+# NOTE: checkpoints/ and results/ ARE tracked on purpose -- the two
+# trained models (~3.5 MB each) and the result figures back up the
+# numbers quoted in the README and let a reader reproduce them.
