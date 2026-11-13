@@ -85,7 +85,7 @@ input / target pairs.
 
 ---
 
-## 4. ALMA-BRAIN project resources (closest to the advert)
+## 4. Related ALMA-BRAIN research and software
 
 - Paper: Delli Veneri, Tychoniec, Guglielmetti, Lehnardt, Longo, et al.
   (2023), *3D Detection of ALMA Sources Using Convolutional Neural
@@ -95,8 +95,9 @@ input / target pairs.
   (the imaging companion paper is in prep at time of writing; this
   repo contains the source-detection and 3D cube CNN.)
 
-This is the immediate prior art for the advertised role. Reading the
-2023 paper before interview is non-optional.
+These resources provide context for source-detection methods and learned
+representations, while this repository focuses on a controlled sparse-aperture
+imaging and reconstruction benchmark.
 
 ---
 
