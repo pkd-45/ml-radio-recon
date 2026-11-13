@@ -7,11 +7,10 @@ bottleneck, trained to reconstruct sky images from sparsely sampled
 ALMA-like *(u, v)* coverage, compared against the classical Högbom CLEAN
 baseline.
 
-Built in response to the SKAO / ESO ALMA-BRAIN imaging direction described
-in the SKAO postdoc advert
-(ref. 10399), as a proof-of-concept that the imaging pipeline, the
-forward model, the CNN-Transformer architecture, and the training /
-evaluation harness all fit together in one place and run end-to-end.
+The project tests an end-to-end combination of a sparse-aperture forward model,
+classical reconstruction, a CNN-Transformer imaging model, and a reproducible
+training and evaluation workflow. It is an independent methods prototype, not
+an ALMA processing service or performance benchmark on telescope visibilities.
 
 ---
 
@@ -30,9 +29,8 @@ CLEAN, Cotton-Schwab CLEAN, MS-CLEAN, and MEM each impose a different
 sparsity / smoothness prior and have served the radio community well for
 decades.
 
-Modern deep-learning imagers — most relevantly the **ALMA BRAIN** work
-that this advert builds on — learn that prior from data rather than
-hand-designing it. The hypothesis is that a network trained on many
+Modern deep-learning imagers, including work associated with **ALMA BRAIN**,
+learn image priors from data rather than hand-designing them. The hypothesis is that a network trained on many
 *(dirty, truth)* pairs can fill in missing Fourier modes more coherently
 than CLEAN, particularly for extended emission and for low-SNR sources
 where CLEAN's iterative point-source model struggles. That is the
@@ -207,8 +205,8 @@ by +0.42 dB over the dirty-only model and roughly halves its excess
 peak-position error, while both ML variants match or exceed CLEAN on
 PSNR and SSIM. Telling the network the point-spread function and
 Fourier sampling that produced the dirty image is exactly the
-"metadata-aware" conditioning the advert's BRAIN-derived architecture
-relies on; here it is a small, measurable gain even at prototype scale.
+metadata-aware conditioning used in radio imaging research;
+here it produces a small, measurable gain in this controlled prototype.
 
 ### Anomaly detection
 
@@ -248,7 +246,7 @@ Four held-out galaxies, four methods each (truth, dirty, CLEAN, ML).
 
 ## Limitations and honest caveats
 
-This is a 4-day prototype. In particular:
+This is a deliberately limited prototype. In particular:
 
 - **Forward model is schematic, not literal CASA.** Antenna positions
   use a log-spiral approximation rather than a real ALMA configuration
@@ -310,5 +308,4 @@ MIT. See `LICENSE`.
 ## Author
 
 Pratyush Kumar Das — University of Queensland, PhD candidate.
-Built as a proof-of-concept prototype while preparing a postdoctoral
-application for the SKAO / ESO ALMA-BRAIN-derived role.
+Independent research software prototype for method comparison and testing.
